@@ -3,43 +3,83 @@ from typing import List
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        # print("kysywdgye")
-        land = 0
-        for i in range(len(grid)):
-            index1 = i - 1 if i > 0 else 0
-            for j in range(len(grid[i])):
-                index2 = j - 1 if j > 0 else 0
-                
-                if i == 0:
-                    if j == 0:
-                        if grid[i][j] == "1":
-                            land += 1
-                    else:
-                        if grid[i][j] == "1" and grid[i][index2] == "0":
-                            land += 1
-                
-                
-                # and index2 == 0 and grid[i][j] == "1":
-                #     land += 1
-                # elif grid[i][j] == "1" and grid[i][j] == "0" and grid[i][j] == "0":
-                #     land += 1 
-                
-                pass
-                
-                
+        if not grid:
+            return 0
+
+        rows, cols = len(grid), len(grid[0])
+        visited = [[False]*cols for _ in range(rows)]
+
+        def dfs(r: int, c: int):
+            # poza planszą
+            if r < 0 or r >= rows or c < 0 or c >= cols:
+                return
+            # woda lub już odwiedzone
+            if grid[r][c] == "0" or visited[r][c]:
+                return
+            visited[r][c] = True
+            # 4 kierunki
+            dfs(r+1, c)
+            dfs(r-1, c)
+            dfs(r, c+1)
+            dfs(r, c-1)
+
+        count = 0
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "1" and not visited[r][c]:
+                    count += 1      # nowa wyspa!
+                    dfs(r, c)       # „zalewamy” całą wyspę
+        return count
+    
+    
+    
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        if not grid:
+            return 0
         
+        rows, cols = len(grid), len(grid[0])
+        visited = [[False]*cols for _ in range(rows)]
         
-        # pass
-        return land
+        def dfs(r, c):
+            if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] == "0" or visited[r][c]:
+                return
+            visited[r][c] = True
+            dfs(r + 1, c)
+            dfs(r - 1, c)
+            dfs(r, c + 1)
+            dfs(r, c - 1)
+            
+        counter = 0
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "1" and not visited[r][c]:
+                    counter += 1
+                    dfs(r, c)
+        return counter
+    
 
 
-
-
-
-
-grid = [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
-mm = Solution()
-result = mm.numIslands(grid)
-expected = 1
-if result != expected:
-    raise ValueError
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        if not grid:
+            return 0
+        rows, cols = len(grid), len(grid[0])
+        visited = [[False]*cols for _ in range(rows)]
+        
+        def dfs(r,c):
+            if c < 0 or c >= cols or r < 0 or r >= rows or grid[r][c] == "0" or visited[r][c]:
+                return
+            visited[r][c] = True
+            dfs(r - 1, c )
+            dfs(r + 1, c )
+            dfs(r , c - 1)
+            dfs(r , c + 1)
+            
+        couter = 0
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == "1" and not visited[row][col]:
+                    couter += 1
+                    dfs(row, col)
+        return couter
