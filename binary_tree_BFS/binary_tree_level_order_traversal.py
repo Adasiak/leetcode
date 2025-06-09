@@ -51,9 +51,9 @@ class Solution:
                 level_vals.append(node.val)
                 
                 if node.left:
-                    level_vals.append(node.left)
+                    que.append(node.left)
                 if node.right:
-                    level_vals.append(node.right)
+                    que.append(node.right)
             res.append(level_vals)
         
         return res
@@ -71,9 +71,9 @@ class Solution:
                 node = que.popleft()
                 level_val.append(node.val)
                 if node.left:
-                    level_val.append(node.left)
+                    que.append(node.left)
                 if node.right:
-                    level_val.append(node.right)
+                    que.append(node.right)
             response.append(level_val)
         return response
     
@@ -91,9 +91,9 @@ class Solution:
                 node = q.popleft()
                 level_val.append(node.val)
                 if node.left:
-                    level_val.append(node.left)
+                    q.append(node.left)
                 if node.right:
-                    level_val.append(node.right)
+                    q.append(node.right)
             list_to_return.append(level_val)
         return list_to_return
     
@@ -112,8 +112,8 @@ class Solution:
                 node = q.popleft()
                 level_val.append(node.val)
                 if node.left:
-                    level_val.append(node.left)
+                    q.append(node.left)
                 if node.right:
-                    level_val.append(node.right)
+                    q.append(node.right)
             list_to_return.append(level_val)
         return list_to_return
