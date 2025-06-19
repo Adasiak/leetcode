@@ -20,41 +20,6 @@ class Solution:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 from typing import List
 
 class Solution:
@@ -69,3 +34,16 @@ class Solution:
         k = k % list_len
         nums[:] = nums[-k:] + nums[:-k]
         return
+
+
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        if not nums:
+            return 0
+        
+        l = k % len(nums)
+        nums = nums[-l:] + nums[:-l]
+        return nums
+    
+    
