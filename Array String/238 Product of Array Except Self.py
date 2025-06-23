@@ -22,3 +22,28 @@ class Solution:
             suffix *= nums[i]
 
         return out
+    
+import math
+import copy
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        list_to_return = []
+        for i in range(len(nums)):
+            tmp = copy.deepcopy(nums)
+            tmp.pop(i)
+            list_to_return.append(math.prod(tmp))
+        return list_to_return
+    
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        cop = math.prod(nums)
+        res = []
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                res.append(int(cop / nums[i]))
+            else:
+                tmp = copy.deepcopy(nums)
+                tmp.pop(i)
+                res.append(math.prod(tmp))
+        return res
