@@ -64,31 +64,25 @@ class Solution:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Solution:
     best = float("-inf")
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
         def dfs(node: Optional[TreeNode]):
+            if not node:
+                return 0
+            left = max(0, dfs(node.left))
+            right = max(0, dfs(node.right))
+            self.best = max(self.best, node.val + left + right)
+            return node.val + max(left, right)
+        dfs(root)
+        return self.best
+    
+
+    
+class Solution:
+    best = float("-inf")
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        def dfs(node):
             if not node:
                 return 0
             left = max(0, dfs(node.left))
