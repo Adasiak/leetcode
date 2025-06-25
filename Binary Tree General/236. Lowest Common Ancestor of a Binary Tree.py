@@ -51,3 +51,4 @@ class Solution:
                 return root
             
             return l if l else r
+        return dfs(root)
