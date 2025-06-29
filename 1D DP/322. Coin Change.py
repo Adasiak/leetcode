@@ -34,7 +34,7 @@ class Solution:
         dp[0] = 0
 
         for coin in coins:                      # każda moneta
-            for i in range(coin, amount + 1):   # zaczynamy od jej wartości
+            for i in range(coin, amount + 1):
                 dp[i] = min(dp[i], dp[i - coin] + 1)
 
         return -1 if dp[amount] == INF else dp[amount]
