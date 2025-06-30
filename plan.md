@@ -5,7 +5,7 @@
 - [x] Print or jot down BFS/DFS, DP, heap templates on one A4  
 - [x] **LC 200 – Number of Islands** (40 min)  
 - [x] **LC 438 – Find All Anagrams in a String** (40 min)  
-- [ ] 5‑minute post‑mortem after each task  
+- [x] 5‑minute post‑mortem after each task  
 
 ---
 
@@ -18,9 +18,9 @@
 ---
 
 ## D‑2  Saturday – Dynamic Programming
-- [ ] **LC 70 – Climbing Stairs** (20 min warm‑up)  
-- [ ] **LC 322 – Coin Change** (45 min)  
-- [ ] Draw `dp` table for coins 1,2,5 → amount 11  
+- [x] **LC 70 – Climbing Stairs** (20 min warm‑up)  
+- [x] **LC 322 – Coin Change** (45 min)  
+- [x] Draw `dp` table for coins 1,2,5 → amount 11  
 - [ ] **LC 213 – House Robber II** & **LC 139 – Word Break**  
 - [ ] Evening: stretch + lights‑out 1 h before sleep  
 
