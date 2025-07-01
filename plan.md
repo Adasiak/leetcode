@@ -22,7 +22,7 @@
 - [x] **LC 322 – Coin Change** (45 min)  
 - [x] Draw `dp` table for coins 1,2,5 → amount 11  
 - [x] **LC 213 – House Robber II** (DID **LC 198 – House Robber**) 
-- [ ] **LC 139 – Word Break**  
+- [x] **LC 139 – Word Break**  
 - [ ] Evening: stretch + lights‑out 1 h before sleep  
 
 ---

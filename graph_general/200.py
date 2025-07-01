@@ -18,7 +18,7 @@ def number_of_land(land):
 		if land[x][y] == 0 or visited[x][y] ==1:
 			return 
 
-		visited[x][y] == 1
+		visited[x][y] = 1
 		dfs(x - 1, y )
 		dfs(x + 1, y)
 		dfs(x, y - 1)

@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         mem_list = []
@@ -25,3 +28,31 @@ class Solution:
             if target - num in pre_idx:
                 return [i,pre_idx[target - num]]
             pre_idx[num] = i
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        tmp = {}
+        for i in range(len(nums)):
+            if nums[i] in tmp:
+                return [tmp[nums[i]], i]
+            else:
+                tmp[target - nums[i]]= i
+                

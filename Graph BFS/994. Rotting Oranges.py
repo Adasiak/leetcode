@@ -97,3 +97,56 @@ class Solution:
         
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        R, C = len(grid), len(grid[0])
+        if not (R or C):
+            return 0
+        DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        q = deque()
+        fresh = 0
+        for x in range(R):
+            for y in range(C):
+                if grid[x][y] == 2:
+                    q.append((x, y, 0))
+                elif grid[x][y] == 1:
+                    fresh += 1
+  
+        timme = 0
+        while q:
+            i, j, minute = q.popleft()
+            timme = max(minute, timme)
+            for r, c in DIRS:
+                nx, ny = i + r, j + c
+                if 0 <= nx < R and 0 <= ny < C and grid[nx][ny] == 1:
+                    grid[nx][ny] = 2
+                    fresh -= 1
+                    q.append((nx, ny, minute + 1))
+        return -1 if fresh else timme
+            
