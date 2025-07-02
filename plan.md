@@ -28,6 +28,16 @@
 ---
 
 ## D‑1  Sunday – Full Mock
+- [x] **LC 174 Dungeon Game**  
+- [ ] **LC 1976 Number of Ways**  
+- [ ] **LC 146 LRU Cache**  
+- [ ] **LC Number of Islands II**  
+- [ ] **LC K-th Smallest in BST**
+
+- [ ] **LC 72. Edit Distance**
+- [ ] **1143.**
+- [ ] **LC 1631. Path With Minimum Effort**
+- [ ] **LC 297. Serialize and Deserialize Binary Tree**  
 - [ ] 45‑min mock interview + 15‑min feedback  
 - [ ] Record audio – review clarity & pace  
 - [ ] STAR story drill (bug fix, conflict, etc.)  

@@ -75,6 +75,7 @@ class Solution:
                 return
             
             visted[x][y] = 1
+            
             for i, j in DIRS:
                 nx, ny = x + i, y + j
                 dfs(nx, ny)
